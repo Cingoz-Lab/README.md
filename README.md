@@ -1,6 +1,6 @@
 # Welcome to Cingöz Lab 🌟
 
-![Cingöz Lab Logo](7link)
+![Cingöz Lab Logo](https://github.com/Cingoz-Lab/README.md/blob/main/Template.jpeg)
 
 ### About Us
 Our laboratory is interested in exploring the mechanisms of therapy resistance and tumor metabolism in brain cancers, specifically Glioblastoma (GBM). GBMs are the common and malignant brain tumors with extremely poor prognosis, with a mean survival of less than 15 months after diagnosis. Therapy resistance and extreme invasiveness are among the root causes of therapeutic failure for GBMs.
