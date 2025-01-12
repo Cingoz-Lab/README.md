@@ -13,7 +13,6 @@ Our mission is to advance scientific understanding and provide open-source tools
 Our current research projects include:
 1. **Mechanisms of TRAIL resistance in tumor cells** 
 2. **CRISPR-based gene-editing innovations**
-3. **Bioinformatics pipeline development**
 
 ---
 
@@ -32,9 +31,6 @@ Our current research projects include:
 <br clear="left"/>
 
 ---
-### 
-
----
 
 ### 🤝 Collaborations and Opportunities
 We welcome collaborations with researchers, developers, and institutions. If you're interested, feel free to [contact us](mailto:your-email@example.com).
@@ -42,7 +38,7 @@ We welcome collaborations with researchers, developers, and institutions. If you
 ---
 
 ### 🔗 Follow Us
-- Website: [https://your-institution-website.com](https://cingozlab.com/index.html)
+- Website: [https://cingozlab.com/index.html]
 - Twitter: [@CingozLab](https://x.com/ACingozLab)
 
 ---
