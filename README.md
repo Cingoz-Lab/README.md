@@ -11,8 +11,8 @@ Our mission is to advance scientific understanding and provide open-source tools
 
 ### 🔬 Research Focus
 Our current research projects include:
-1. **Mechanisms of TRAIL resistance in GMB cells ** 
-2. **CRISPR **
+1. **Mechanisms of TRAIL resistance in GMB cells** 
+2. **CRISPR**
 
 ---
 
