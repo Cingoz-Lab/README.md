@@ -11,8 +11,8 @@ Our mission is to advance scientific understanding and provide open-source tools
 
 ### 🔬 Research Focus
 Our current research projects include:
-1. **Mechanisms of TRAIL resistance in tumor cells** 
-2. **CRISPR-based gene-editing innovations**
+1. **Mechanisms of TRAIL resistance in GMB cells ** 
+2. **CRISPR **
 
 ---
 
@@ -38,7 +38,7 @@ We welcome collaborations with researchers, developers, and institutions. If you
 ---
 
 ### 🔗 Follow Us
-- Website: https://cingozlab.com/index.html
+- Website: [https://cingozlab.com/index.html](https://cingozlab.com/index.html)
 - Twitter: [@CingozLab](https://x.com/ACingozLab)
 
 ---
