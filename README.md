@@ -33,7 +33,7 @@ Our current research projects include:
 ---
 
 ### 🤝 Collaborations and Opportunities
-We welcome collaborations with researchers, developers, and institutions. If you're interested, feel free to [contact us](mailto:your-email@example.com).
+We welcome collaborations with researchers, developers, and institutions. If you're interested, feel free to [contact us](mailto:info@cingozlab.com).
 
 ---
 
