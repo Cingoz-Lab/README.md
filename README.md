@@ -38,7 +38,7 @@ We welcome collaborations with researchers, developers, and institutions. If you
 ---
 
 ### 🔗 Follow Us
-- Website: [https://cingozlab.com/index.html]
+- Website: https://cingozlab.com/index.html
 - Twitter: [@CingozLab](https://x.com/ACingozLab)
 
 ---
