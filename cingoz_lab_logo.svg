@@ -1,89 +1,181 @@
 <svg width="680" height="420" viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    @keyframes pulse1 { 0%,100%{r:50} 50%{r:53} }
+    @keyframes pulse2 { 0%,100%{r:44} 50%{r:47} }
+    @keyframes floatVes { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+    @keyframes spinRing  { from{transform:rotate(0deg)}   to{transform:rotate(360deg)}  }
+    @keyframes spinRing2 { from{transform:rotate(0deg)}   to{transform:rotate(-360deg)} }
+    @keyframes blink { 0%,100%{opacity:.4} 50%{opacity:1} }
+    @keyframes glow  { 0%,100%{opacity:.15} 50%{opacity:.35} }
+    @media (prefers-reduced-motion: no-preference) {
+      .cell1-mem { animation: pulse1 3s ease-in-out infinite; transform-origin:290px 155px; }
+      .cell2-mem { animation: pulse2 4s ease-in-out infinite; transform-origin:460px 148px; }
+      .nuc-ring  { animation: spinRing  18s linear infinite; transform-origin:290px 155px; }
+      .nuc-ring2 { animation: spinRing2 12s linear infinite; transform-origin:460px 148px; }
+      .v1 { animation: floatVes 2.4s ease-in-out infinite; }
+      .v2 { animation: floatVes 3.1s ease-in-out infinite .6s; }
+      .v3 { animation: floatVes 2.8s ease-in-out infinite 1.2s; }
+      .v4 { animation: floatVes 3.5s ease-in-out infinite .3s; }
+      .v5 { animation: floatVes 2.2s ease-in-out infinite 1.8s; }
+      .v6 { animation: floatVes 3.8s ease-in-out infinite .9s; }
+      .dot1 { animation: blink 1.8s ease-in-out infinite; }
+      .dot2 { animation: blink 2.5s ease-in-out infinite .7s; }
+      .dot3 { animation: blink 2.0s ease-in-out infinite 1.3s; }
+      .bg-glow { animation: glow 4s ease-in-out infinite; }
+    }
+  </style>
 
-<!-- Card background — warm cream -->
-<rect x="60" y="20" width="560" height="380" rx="20" fill="#f5f0e8"/>
-<rect x="60" y="20" width="560" height="380" rx="20" fill="none" stroke="#e8a020" stroke-width="2"/>
+  <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#0a0e2e"/>
+    <stop offset="100%" stop-color="#0d1b5e"/>
+  </linearGradient>
+  <radialGradient id="cellGrad1" cx="45%" cy="40%" r="55%">
+    <stop offset="0%"   stop-color="#2a3a8f" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#0d1b5e" stop-opacity="0.5"/>
+  </radialGradient>
+  <radialGradient id="cellGrad2" cx="45%" cy="40%" r="55%">
+    <stop offset="0%"   stop-color="#243280" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#0d1b5e" stop-opacity="0.5"/>
+  </radialGradient>
+  <radialGradient id="nucGrad1" cx="40%" cy="38%" r="60%">
+    <stop offset="0%"   stop-color="#5070e0"/>
+    <stop offset="100%" stop-color="#1a2a8c"/>
+  </radialGradient>
+  <radialGradient id="nucGrad2" cx="40%" cy="38%" r="60%">
+    <stop offset="0%"   stop-color="#3a5bd0"/>
+    <stop offset="100%" stop-color="#1a1a8c"/>
+  </radialGradient>
+  <radialGradient id="vesGrad" cx="35%" cy="35%" r="65%">
+    <stop offset="0%"   stop-color="#4a6ae8" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#1a2a8c" stop-opacity="0.6"/>
+  </radialGradient>
 
-<!-- Subtle grid lines -->
-<line x1="60"  y1="80"  x2="620" y2="80"  stroke="#e8dcc8" stroke-width="0.7"/>
-<line x1="60"  y1="140" x2="620" y2="140" stroke="#e8dcc8" stroke-width="0.7"/>
-<line x1="60"  y1="200" x2="620" y2="200" stroke="#e8dcc8" stroke-width="0.7"/>
-<line x1="60"  y1="260" x2="620" y2="260" stroke="#e8dcc8" stroke-width="0.7"/>
-<line x1="60"  y1="320" x2="620" y2="320" stroke="#e8dcc8" stroke-width="0.7"/>
-<line x1="140" y1="20"  x2="140" y2="400" stroke="#e8dcc8" stroke-width="0.7"/>
-<line x1="220" y1="20"  x2="220" y2="400" stroke="#e8dcc8" stroke-width="0.7"/>
-<line x1="300" y1="20"  x2="300" y2="400" stroke="#e8dcc8" stroke-width="0.7"/>
-<line x1="380" y1="20"  x2="380" y2="400" stroke="#e8dcc8" stroke-width="0.7"/>
-<line x1="460" y1="20"  x2="460" y2="400" stroke="#e8dcc8" stroke-width="0.7"/>
-<line x1="540" y1="20"  x2="540" y2="400" stroke="#e8dcc8" stroke-width="0.7"/>
+  <filter id="gf" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur stdDeviation="5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="gfSoft" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="14"/>
+  </filter>
+  <filter id="textGlow" x="-20%" y="-60%" width="140%" height="220%">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
 
-<!-- Orange left accent bar -->
-<rect x="80" y="40" width="4" height="340" rx="2" fill="#e8a020"/>
+<!-- Background -->
+<rect width="680" height="420" fill="url(#bgGrad)" rx="18"/>
+<rect width="680" height="420" fill="none" stroke="#2a3a9f" stroke-width="1.5" rx="18" opacity="0.6"/>
 
-<!-- CELL 1 — large, center-left -->
-<circle cx="290" cy="148" r="54" fill="none" stroke="#e8a020" stroke-width="0.5" opacity="0.3"/>
-<circle cx="290" cy="148" r="50" fill="none" stroke="#e8a020" stroke-width="0.8" opacity="0.4"/>
-<circle cx="290" cy="148" r="44" fill="#ddd8cc" stroke="#e8a020" stroke-width="2"/>
-<circle cx="290" cy="148" r="22" fill="#c8c0b0" stroke="#b0a890" stroke-width="1.2"/>
-<circle cx="283" cy="142" r="4.5" fill="#a89e88" opacity="0.9"/>
-<circle cx="296" cy="145" r="6"   fill="#a89e88" opacity="0.9"/>
-<circle cx="288" cy="156" r="4"   fill="#a89e88" opacity="0.8"/>
-<path d="M266 122 L252 106 L268 120" fill="#e8e0d0" stroke="#c8b890" stroke-width="1"/>
-<path d="M314 118 L324 100 L312 118" fill="#e8e0d0" stroke="#c8b890" stroke-width="1"/>
-<path d="M256 170 L238 178 L256 168" fill="#e8e0d0" stroke="#c8b890" stroke-width="1"/>
-<path d="M324 168 L342 176 L324 166" fill="#e8e0d0" stroke="#c8b890" stroke-width="1"/>
+<!-- Background glow orbs -->
+<ellipse class="bg-glow" cx="290" cy="160" rx="160" ry="120" fill="#1a3aff" filter="url(#gfSoft)" opacity="0.18"/>
+<ellipse class="bg-glow" cx="460" cy="150" rx="120" ry="100" fill="#3a5bff" filter="url(#gfSoft)" opacity="0.12"/>
 
-<!-- CELL 2 — large, right -->
-<circle cx="430" cy="136" r="44" fill="none" stroke="#e8a020" stroke-width="0.8" opacity="0.4"/>
-<circle cx="430" cy="136" r="38" fill="#ddd8cc" stroke="#e8a020" stroke-width="2"/>
-<circle cx="430" cy="136" r="18" fill="#c8c0b0" stroke="#b0a890" stroke-width="1.2"/>
-<circle cx="424" cy="131" r="3.5" fill="#a89e88" opacity="0.9"/>
-<circle cx="435" cy="134" r="5"   fill="#a89e88" opacity="0.9"/>
-<circle cx="428" cy="143" r="3"   fill="#a89e88" opacity="0.8"/>
-<path d="M414 116 L404 100 L416 116" fill="#e8e0d0" stroke="#c8b890" stroke-width="1"/>
-<path d="M446 124 L460 110 L446 124" fill="#e8e0d0" stroke="#c8b890" stroke-width="1"/>
-<path d="M452 150 L468 158 L452 148" fill="#e8e0d0" stroke="#c8b890" stroke-width="1"/>
+<!-- Grid lines -->
+<line x1="60"  y1="70"  x2="620" y2="70"  stroke="#1e2e6a" stroke-width="0.5"/>
+<line x1="60"  y1="140" x2="620" y2="140" stroke="#1e2e6a" stroke-width="0.5"/>
+<line x1="60"  y1="210" x2="620" y2="210" stroke="#1e2e6a" stroke-width="0.5"/>
+<line x1="60"  y1="280" x2="620" y2="280" stroke="#1e2e6a" stroke-width="0.5"/>
+<line x1="60"  y1="350" x2="620" y2="350" stroke="#1e2e6a" stroke-width="0.5"/>
+<line x1="140" y1="20"  x2="140" y2="400" stroke="#1e2e6a" stroke-width="0.5"/>
+<line x1="220" y1="20"  x2="220" y2="400" stroke="#1e2e6a" stroke-width="0.5"/>
+<line x1="300" y1="20"  x2="300" y2="400" stroke="#1e2e6a" stroke-width="0.5"/>
+<line x1="380" y1="20"  x2="380" y2="400" stroke="#1e2e6a" stroke-width="0.5"/>
+<line x1="460" y1="20"  x2="460" y2="400" stroke="#1e2e6a" stroke-width="0.5"/>
+<line x1="540" y1="20"  x2="540" y2="400" stroke="#1e2e6a" stroke-width="0.5"/>
 
-<!-- Small vesicles -->
-<circle cx="246" cy="104" r="7"   fill="#e8e0d0" stroke="#e8a020" stroke-width="1.2"/>
-<circle cx="246" cy="104" r="3.5" fill="#d4c8b0"/>
-<circle cx="324" cy="96"  r="9"   fill="#e8e0d0" stroke="#e8a020" stroke-width="1.2"/>
-<circle cx="324" cy="96"  r="4.5" fill="#d4c8b0"/>
-<circle cx="386" cy="100" r="6"   fill="#e8e0d0" stroke="#e8a020" stroke-width="1.2"/>
-<circle cx="386" cy="100" r="3"   fill="#d4c8b0"/>
-<circle cx="470" cy="108" r="8"   fill="#e8e0d0" stroke="#e8a020" stroke-width="1.2"/>
-<circle cx="470" cy="108" r="4"   fill="#d4c8b0"/>
-<circle cx="478" cy="158" r="6"   fill="#e8e0d0" stroke="#e8a020" stroke-width="1.2"/>
-<circle cx="478" cy="158" r="3"   fill="#d4c8b0"/>
-<circle cx="230" cy="172" r="5"   fill="#e8e0d0" stroke="#e8a020" stroke-width="1.2"/>
-<circle cx="230" cy="172" r="2.5" fill="#d4c8b0"/>
-<circle cx="350" cy="84"  r="5"   fill="#e8e0d0" stroke="#e8a020" stroke-width="1.2"/>
-<circle cx="350" cy="84"  r="2.5" fill="#d4c8b0"/>
-<circle cx="498" cy="132" r="7"   fill="#e8e0d0" stroke="#e8a020" stroke-width="1.2"/>
-<circle cx="498" cy="132" r="3.5" fill="#d4c8b0"/>
-<circle cx="210" cy="138" r="6"   fill="#e8e0d0" stroke="#e8a020" stroke-width="1.2"/>
-<circle cx="210" cy="138" r="3"   fill="#d4c8b0"/>
-<circle cx="266" cy="84"  r="3"   fill="#d0c4a8" opacity="0.8"/>
-<circle cx="356" cy="72"  r="2"   fill="#d0c4a8" opacity="0.7"/>
-<circle cx="412" cy="80"  r="2.5" fill="#d0c4a8" opacity="0.7"/>
-<circle cx="486" cy="88"  r="2"   fill="#d0c4a8" opacity="0.6"/>
+<!-- Left accent bar -->
+<rect x="36" y="38" width="4" height="344" rx="2" fill="#3a5bff" opacity="0.8"/>
+
+<!-- CELL 1 -->
+<circle cx="290" cy="155" r="68" fill="#1a3aff" opacity="0.06" filter="url(#gfSoft)"/>
+<circle cx="290" cy="155" r="60" fill="none" stroke="#3a5bff" stroke-width="0.6" opacity="0.2"/>
+<circle cx="290" cy="155" r="56" fill="none" stroke="#3a5bff" stroke-width="0.4" opacity="0.15"/>
+<circle class="cell1-mem" cx="290" cy="155" r="50" fill="url(#cellGrad1)" stroke="#3a5bff" stroke-width="1.8" opacity="0.95"/>
+<circle class="nuc-ring" cx="290" cy="155" r="26" fill="none" stroke="#5070e0" stroke-width="0.8" stroke-dasharray="3 5" opacity="0.5"/>
+<circle cx="290" cy="155" r="22" fill="url(#nucGrad1)" stroke="#6080f0" stroke-width="1.2" opacity="0.95" filter="url(#gf)"/>
+<circle class="dot1" cx="284" cy="150" r="3.5" fill="#a0b8ff" opacity="0.8"/>
+<circle class="dot2" cx="296" cy="153" r="4.5" fill="#8aaaf0" opacity="0.8"/>
+<circle class="dot3" cx="288" cy="163" r="3"   fill="#a0b8ff" opacity="0.7"/>
+<line x1="258" y1="125" x2="242" y2="108" stroke="#3a5bff" stroke-width="1.2" opacity="0.6"/>
+<circle cx="241" cy="107" r="2.5" fill="#5070e0" opacity="0.7"/>
+<line x1="318" y1="120" x2="330" y2="102" stroke="#3a5bff" stroke-width="1.2" opacity="0.6"/>
+<circle cx="331" cy="101" r="2.5" fill="#5070e0" opacity="0.7"/>
+<line x1="248" y1="178" x2="232" y2="190" stroke="#3a5bff" stroke-width="1.2" opacity="0.6"/>
+<circle cx="231" cy="191" r="2.5" fill="#5070e0" opacity="0.7"/>
+<line x1="330" y1="178" x2="346" y2="190" stroke="#3a5bff" stroke-width="1.2" opacity="0.6"/>
+<circle cx="347" cy="191" r="2.5" fill="#5070e0" opacity="0.7"/>
+<line x1="265" y1="108" x2="255" y2="90" stroke="#3a5bff" stroke-width="1" opacity="0.5"/>
+<circle cx="254" cy="89" r="2" fill="#5070e0" opacity="0.6"/>
+
+<!-- CELL 2 -->
+<circle cx="460" cy="148" r="55" fill="#1a3aff" opacity="0.05" filter="url(#gfSoft)"/>
+<circle cx="460" cy="148" r="48" fill="none" stroke="#3a5bff" stroke-width="0.5" opacity="0.2"/>
+<circle class="cell2-mem" cx="460" cy="148" r="44" fill="url(#cellGrad2)" stroke="#3a5bff" stroke-width="1.6" opacity="0.9"/>
+<circle class="nuc-ring2" cx="460" cy="148" r="22" fill="none" stroke="#4060d0" stroke-width="0.8" stroke-dasharray="3 5" opacity="0.5"/>
+<circle cx="460" cy="148" r="18" fill="url(#nucGrad2)" stroke="#5070e0" stroke-width="1.1" opacity="0.95" filter="url(#gf)"/>
+<circle class="dot2" cx="455" cy="144" r="3"   fill="#90a8f8" opacity="0.8"/>
+<circle class="dot1" cx="465" cy="147" r="4"   fill="#7898e8" opacity="0.8"/>
+<circle class="dot3" cx="458" cy="156" r="2.5" fill="#90a8f8" opacity="0.7"/>
+<line x1="424" y1="122" x2="410" y2="106" stroke="#3a5bff" stroke-width="1.1" opacity="0.55"/>
+<circle cx="409" cy="105" r="2.2" fill="#5070e0" opacity="0.7"/>
+<line x1="494" y1="130" x2="508" y2="116" stroke="#3a5bff" stroke-width="1.1" opacity="0.55"/>
+<circle cx="509" cy="115" r="2.2" fill="#5070e0" opacity="0.7"/>
+<line x1="500" y1="160" x2="516" y2="170" stroke="#3a5bff" stroke-width="1" opacity="0.5"/>
+<circle cx="517" cy="171" r="2"   fill="#5070e0" opacity="0.6"/>
+
+<!-- Vesicles -->
+<g class="v1">
+  <circle cx="240" cy="105" r="9"   fill="url(#vesGrad)" stroke="#5070e0" stroke-width="1.2" opacity="0.85"/>
+  <circle cx="237" cy="102" r="3"   fill="#8aaaf8" opacity="0.5"/>
+</g>
+<g class="v2">
+  <circle cx="336" cy="90"  r="11"  fill="url(#vesGrad)" stroke="#5070e0" stroke-width="1.2" opacity="0.85"/>
+  <circle cx="332" cy="86"  r="4"   fill="#8aaaf8" opacity="0.5"/>
+</g>
+<g class="v3">
+  <circle cx="398" cy="96"  r="7"   fill="url(#vesGrad)" stroke="#4060d0" stroke-width="1.1" opacity="0.8"/>
+  <circle cx="395" cy="93"  r="2.5" fill="#7898e8" opacity="0.5"/>
+</g>
+<g class="v4">
+  <circle cx="504" cy="112" r="10"  fill="url(#vesGrad)" stroke="#5070e0" stroke-width="1.2" opacity="0.85"/>
+  <circle cx="501" cy="109" r="3.5" fill="#8aaaf8" opacity="0.5"/>
+</g>
+<g class="v5">
+  <circle cx="518" cy="170" r="7"   fill="url(#vesGrad)" stroke="#4060d0" stroke-width="1.1" opacity="0.8"/>
+  <circle cx="515" cy="167" r="2.5" fill="#7898e8" opacity="0.5"/>
+</g>
+<g class="v6">
+  <circle cx="214" cy="178" r="6"   fill="url(#vesGrad)" stroke="#4060d0" stroke-width="1"   opacity="0.75"/>
+  <circle cx="211" cy="175" r="2"   fill="#7898e8" opacity="0.45"/>
+</g>
+
+<!-- Tiny ambient dots -->
+<circle cx="272" cy="84"  r="2"   fill="#5070e0" opacity="0.5"/>
+<circle cx="358" cy="72"  r="1.5" fill="#4060d0" opacity="0.45"/>
+<circle cx="418" cy="78"  r="2"   fill="#5070e0" opacity="0.4"/>
+<circle cx="490" cy="88"  r="1.5" fill="#4060d0" opacity="0.4"/>
+<circle cx="210" cy="140" r="5"   fill="url(#vesGrad)" stroke="#4060d0" stroke-width="1" opacity="0.7"/>
 
 <!-- Typography -->
-<text x="108" y="250" font-family="Georgia,serif" font-size="13" font-style="italic" fill="#888070" letter-spacing="1">Welcome to the</text>
-<text x="105" y="292" font-family="Georgia,serif" font-size="38" font-weight="700" fill="#2a2418" letter-spacing="1">Cingöz Lab</text>
-<rect x="105" y="300" width="340" height="3" rx="1.5" fill="#e8a020"/>
-<text x="105" y="322" font-family="Arial,sans-serif" font-size="11" fill="#6a6050" letter-spacing="0.5">Cancer Therapy Resistance and Tumor Metabolism Laboratory</text>
+<text x="72" y="252" font-family="Georgia,serif" font-size="13" font-style="italic" fill="#7090e0" letter-spacing="1.5" opacity="0.9">Welcome to the</text>
+<text x="68" y="298" font-family="Georgia,serif" font-size="40" font-weight="700" fill="#ffffff" letter-spacing="1" filter="url(#textGlow)">Cingöz Lab</text>
+<rect x="68" y="306" width="360" height="3" rx="1.5" fill="#3a5bff"/>
+<text x="68" y="327" font-family="Arial,sans-serif" font-size="11" fill="#8090c8" letter-spacing="0.5">Cancer Therapy Resistance and Tumor Metabolism Laboratory</text>
 
 <!-- Tags -->
-<rect x="105" y="338" width="110" height="22" rx="11" fill="none" stroke="#e8a020" stroke-width="1.3"/>
-<text x="160" y="353" text-anchor="middle" font-family="Arial,sans-serif" font-size="9.5" fill="#6a6050">Cancer Research</text>
-<rect x="224" y="338" width="84"  height="22" rx="11" fill="none" stroke="#e8a020" stroke-width="1.3"/>
-<text x="266" y="353" text-anchor="middle" font-family="Arial,sans-serif" font-size="9.5" fill="#6a6050">Metabolism</text>
-<rect x="317" y="338" width="104" height="22" rx="11" fill="none" stroke="#e8a020" stroke-width="1.3"/>
-<text x="369" y="353" text-anchor="middle" font-family="Arial,sans-serif" font-size="9.5" fill="#6a6050">Drug Resistance</text>
+<rect x="68"  y="344" width="114" height="23" rx="11.5" fill="none" stroke="#3a5bff" stroke-width="1.3" opacity="0.8"/>
+<text x="125" y="359" text-anchor="middle" font-family="Arial,sans-serif" font-size="9.5" fill="#8aabff">Cancer Research</text>
+<rect x="192" y="344" width="88"  height="23" rx="11.5" fill="none" stroke="#3a5bff" stroke-width="1.3" opacity="0.8"/>
+<text x="236" y="359" text-anchor="middle" font-family="Arial,sans-serif" font-size="9.5" fill="#8aabff">Metabolism</text>
+<rect x="290" y="344" width="108" height="23" rx="11.5" fill="none" stroke="#3a5bff" stroke-width="1.3" opacity="0.8"/>
+<text x="344" y="359" text-anchor="middle" font-family="Arial,sans-serif" font-size="9.5" fill="#8aabff">Drug Resistance</text>
+<rect x="408" y="344" width="72"  height="23" rx="11.5" fill="none" stroke="#3a5bff" stroke-width="1.3" opacity="0.8"/>
+<text x="444" y="359" text-anchor="middle" font-family="Arial,sans-serif" font-size="9.5" fill="#8aabff">GBM</text>
 
 <!-- Footer -->
-<line x1="80" y1="376" x2="620" y2="376" stroke="#e8dcc8" stroke-width="1"/>
-<text x="340" y="392" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#b0a890" letter-spacing="1">BEZMIALEM VAKIF UNIVERSITY · github.com/Cingoz-Lab</text>
+<line x1="44" y1="380" x2="636" y2="380" stroke="#1e2e6a" stroke-width="1"/>
+<text x="340" y="397" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#4a5a9a" letter-spacing="1.2">BEZMIALEM VAKIF UNIVERSITY  ·  github.com/Cingoz-Lab</text>
 
 </svg>
